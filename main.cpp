@@ -55,6 +55,10 @@ list.display();
 
 list.front();
 list.rear();
+list.dequeue();
+cout<<"Element deleted \n";
+list.front();
+list.rear();
 
 
 

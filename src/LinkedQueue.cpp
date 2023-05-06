@@ -31,21 +31,25 @@ void LinkedQueue::dequeue()
 {
     if (IsEmpty())
     {
-       cout<<"Queue empty..."<<endl;  /* code */
+        cout << "Queue empty..." << endl;
+        return;
     }
-    else {
-       LinkedQueue *temp = HEAD; //since for dequeue we need to remove from head FILO
-       HEAD = HEAD->next;
-       if (HEAD == nullptr)
-       {
-        
-         delete temp; /* code */
-       }
 
-         
-    }
+    LinkedQueue *p = HEAD;
     
+
+    while (p->next != TAIL)
+    {
+        p = p->next;
     }
+
+    delete TAIL;
+    TAIL = p;
+    TAIL->next = nullptr;
+}
+
+    
+    
 
 void LinkedQueue::front(){
     if (HEAD == nullptr)
